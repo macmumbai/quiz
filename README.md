@@ -1,6 +1,6 @@
-# LiveQuiz Pro
+# Quiz Pro by NETRA Mumbai
 
-LiveQuiz Pro is a responsive quiz management app built with React, TypeScript, Vite and Supabase. The dashboard, quiz list, quiz creation, authentication wiring, QR join panel and database schema are included. Supabase is the persistence and authorization layer; the app does not silently substitute browser-only demo records when it is unconfigured.
+Quiz Pro by NETRA Mumbai is a responsive quiz management app built with React, TypeScript, Vite and Supabase. The dashboard, quiz list, quiz creation, authentication wiring, QR join panel and database schema are included. Supabase is the persistence and authorization layer; the app does not silently substitute browser-only demo records when it is unconfigured.
 
 ## Current implementation
 

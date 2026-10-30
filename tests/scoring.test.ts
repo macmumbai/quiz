@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { scoreAnswer } from '../src/lib/scoring';
 
 describe('scoreAnswer', () => {
-  it('awards base marks for a correct response when speed scoring is off', () => {
-    expect(scoreAnswer({ marks: 8, answered: true, correct: true })).toEqual({ marksAwarded: 8, speedPoints: 1, totalPoints: 8 });
+  it('uses the default 60-second multiplier when no question timer is configured', () => {
+    expect(scoreAnswer({ marks: 8, answered: true, correct: true })).toEqual({ marksAwarded: 8, speedPoints: 10, totalPoints: 80 });
+    expect(scoreAnswer({ marks: 8, answered: true, correct: true, elapsedSeconds: 60 })).toEqual({ marksAwarded: 8, speedPoints: 1, totalPoints: 8 });
   });
 
   it('awards zero for incorrect and unanswered answers by default', () => {

@@ -33,10 +33,8 @@ export function scoreAnswer(input: ScoreInput, rules: ScoringRules = {}): ScoreR
   }
 
   let speedPoints = 1;
-  const duration = input.timeLimitSeconds ?? 60;
-  if (marksAwarded > 0 && duration > 0) {
-    const remaining = Math.max(0, duration - Math.max(0, input.elapsedSeconds || 0));
-    speedPoints = Math.min(10, Math.max(1, 1 + Math.floor(9 * remaining / duration)));
+  if (marksAwarded > 0) {
+    speedPoints = Math.max(1, 10 - Math.max(0, input.elapsedSeconds || 0) * 0.16);
   }
   marksAwarded = Math.round(marksAwarded * 100) / 100;
   if (Object.is(marksAwarded, -0)) marksAwarded = 0;
